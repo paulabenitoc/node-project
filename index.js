@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const { connectMongo } = require("./src/data/mongo");
 
 const movieRoutes = require('./src/api/routes/routes.movies');
+const cinemaRoutes = require('./src/api/routes/routes.cinema');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -14,12 +15,12 @@ mongoose.connect('mongodb+srv://paulabenitoc:rjIkJXoz7T8MglCJ@cluster0.b1tjh5g.m
   useUnifiedTopology: true,
 });
 
-// Routes sin request body
-app.use('/movies', movieRoutes);
-
-
 // Middleware, Body de las requests formato JSON
 app.use(express.json());
+
+// Routes sin request body
+app.use('/movies', movieRoutes);
+app.use('/cinemas', cinemaRoutes);
 
 // Routes con request body JSON
 app.use('/movies/:id', movieRoutes);

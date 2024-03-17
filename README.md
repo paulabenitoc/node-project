@@ -1,1 +1,1 @@
-# Proyecto de Node (Parte I y Parte II)
+# Proyecto Node.js (Parte I y Parte II)
